@@ -26,10 +26,14 @@ export const loginService = async (data: LoginRequest): Promise<LoginResponse> =
       };
     }
 
+    const token = result.accessToken ?? result.token;
+
     return {
       success: true,
       message: "Inicio de sesión exitoso",
-      token: result.token,
+      token,
+      accessToken: token,
+      refreshToken: result.refreshToken,
     };
   } catch (error) {
     return {

@@ -8,6 +8,8 @@ export interface LoginResponse {
   message: string;
   flag?: boolean;
   token?: string;
+  accessToken?: string;
+  refreshToken?: string;
 }
 
 export interface LoginFormProps {
